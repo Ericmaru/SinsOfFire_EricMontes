@@ -5,19 +5,35 @@ using UnityEngine;
 public class GroundSensor : MonoBehaviour
 {
     public bool isGrounded;
+    private Rigidbody2D _rigidBody;
+
+    void Awake()
+    {
+        _rigidBody = GetComponentInParent<Rigidbody2D>();
+    }
 
     void OnTriggerEnter2D(Collider2D collider) 
     {
-        isGrounded = true; 
+        if(collider.gameObject.layer == 3)
+        {
+            isGrounded = true;
+        }
+
     }
 
     void OnTriggerStay2D(Collider2D collider) 
     {
-        isGrounded = true; 
+        if(collider.gameObject.layer == 3)
+        {
+            isGrounded = true;
+        }
     }
 
     void OnTriggerExit2D(Collider2D collider) 
     {
-        isGrounded = false; 
+        if(collider.gameObject.layer == 3)
+        {
+            isGrounded = false;
+        } 
     }
 }
