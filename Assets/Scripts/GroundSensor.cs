@@ -5,6 +5,7 @@ using UnityEngine;
 public class GroundSensor : MonoBehaviour
 {
     public bool isGrounded;
+    public bool canDoubleJump = true;
     private Rigidbody2D _rigidBody;
 
     void Awake()
@@ -17,6 +18,7 @@ public class GroundSensor : MonoBehaviour
         if(collider.gameObject.layer == 3)
         {
             isGrounded = true;
+            canDoubleJump = true;
         }
 
     }
