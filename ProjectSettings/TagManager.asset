@@ -8,13 +8,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Suelo
+  - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - Trampa
+  - LimitesEnemigos
+  - Cofres
   - 
   - 
   - 

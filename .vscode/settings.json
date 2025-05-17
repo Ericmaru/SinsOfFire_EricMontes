@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "SinsOfFire_EricMontes.sln"
+    "dotnet.defaultSolution": "SinsOfFire_OriolRoca.sln"
 }

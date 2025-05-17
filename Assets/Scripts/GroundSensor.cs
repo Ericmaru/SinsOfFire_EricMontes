@@ -6,11 +6,11 @@ public class GroundSensor : MonoBehaviour
 {
     public bool isGrounded;
     public bool canDoubleJump = true;
-    private Rigidbody2D _rigidBody;
+    private PlayerContol _playerControl;
 
     void Awake()
     {
-        _rigidBody = GetComponentInParent<Rigidbody2D>();
+        _playerControl = GetComponentInParent<PlayerContol>();
     }
 
     void OnTriggerEnter2D(Collider2D collider) 
@@ -21,21 +21,19 @@ public class GroundSensor : MonoBehaviour
             canDoubleJump = true;
         }
 
+        if(collider.gameObject.layer == 7)
+        {
+            _playerControl.Death();
+        }
     }
 
     void OnTriggerStay2D(Collider2D collider) 
     {
-        if(collider.gameObject.layer == 3)
-        {
-            isGrounded = true;
-        }
+        isGrounded = true; 
     }
 
     void OnTriggerExit2D(Collider2D collider) 
     {
-        if(collider.gameObject.layer == 3)
-        {
-            isGrounded = false;
-        } 
+        isGrounded = false; 
     }
 }
